@@ -61,7 +61,7 @@ public class FileController {
 
     //文件下载管理
     @GetMapping("/download")
-    public ResponseEntity<byte[]> fileDownload(String filename) {
+    public ResponseEntity<byte[]> fileDownload(HttpServletRequest request, String filename) throws  Exception{
         //指定要下载的文件根路径
         String dirPath = "E:/file/";
         //创建该文件对象
@@ -69,6 +69,7 @@ public class FileController {
         //设置响应头
         HttpHeaders headers = new HttpHeaders();
         //通知浏览器以下载的方式打开
+        filename=getFilename(request,filename);
         headers.setContentDispositionFormData("attachment", filename);
         //定义以流的形式下载返回文件数据
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
