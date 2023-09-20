@@ -53,6 +53,7 @@ public class FileController {
         //携带上传状态信息回调到文件上传页面
         return "upload";
     }
+
     //向文件下载页面跳转
     @GetMapping("/toDownload")
     public String toDownload() {
@@ -61,7 +62,7 @@ public class FileController {
 
     //文件下载管理
     @GetMapping("/download")
-    public ResponseEntity<byte[]> fileDownload(HttpServletRequest request, String filename) throws  Exception{
+    public ResponseEntity<byte[]> fileDownload(HttpServletRequest request, String filename) throws Exception {
         //指定要下载的文件根路径
         String dirPath = "E:/file/";
         //创建该文件对象
@@ -69,7 +70,7 @@ public class FileController {
         //设置响应头
         HttpHeaders headers = new HttpHeaders();
         //通知浏览器以下载的方式打开
-        filename=getFilename(request,filename);
+        filename = getFilename(request, filename);
         headers.setContentDispositionFormData("attachment", filename);
         //定义以流的形式下载返回文件数据
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
@@ -80,15 +81,16 @@ public class FileController {
             return new ResponseEntity<byte[]>(e.getMessage().getBytes(), HttpStatus.EXPECTATION_FAILED);
         }
     }
+
     private String getFilename(HttpServletRequest request, String filename)
             throws Exception {
         String[] IEBrowserKeyWords = {"MSIE", "Trident", "Edge"};
         String userAgent = request.getHeader("User-Agent");
         for (String keyWord : IEBrowserKeyWords) {
             if (userAgent.contains(keyWord)) {
-                return URLEncoder.encode(filename, "UTF-8").replace("+"," ");
-            }}
+                return URLEncoder.encode(filename, "UTF-8").replace("+", " ");
+            }
+        }
         return new String(filename.getBytes("UTF-8"), "ISO-8859-1");
     }
-
 }
