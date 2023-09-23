@@ -7,9 +7,11 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ImportResource;
 
+
 @SpringBootApplication//用注解标识的类作为springboot的入口类
+//@EnableCaching
 @ServletComponentScan//开启基于注解方式的Servlet组件扫描支持
-@ImportResource("classpath:xmlpropertoes.xml")//加载自定义xml配置文件位置
+@ImportResource("classpath:xmlpropertoes.xml")//加载自定义xml配置文件位置//
 public class JavaScriptBootDome01Application extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
