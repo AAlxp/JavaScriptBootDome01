@@ -32,5 +32,8 @@ public interface DiscussRepository extends JpaRepository<Discuss, Integer> {
     @Query("DELETE from t_comment c WHERE  c.id = ?1")
     public int deleteDiscuss(Integer id);
 
-
+    @org.springframework.transaction.annotation.Transactional
+    @Modifying
+    @Query("UPDATE t_comment c SET c.author=?1 WHERE c.id = ?2")
+    public int updateComment(String author,Integer id);
 }
