@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>影视直播厅</title>
+</head>
+<body>
+<h1 align="center">欢迎进入电影网站首页</h1>
+<hr/>
+<h3>普通电影</h3>
+<ul>
+  <li><a th:href="@{/detail/common/1}">坚如磐石</a></li>
+  <li><a th:href="@{/detail/common/2}">莫斯科行动</a></li>
+</ul>
+<h3>VIP电影</h3>
+<ul>
+  <li><a th:href="@{/detail/vip/1}">志愿军：雄兵出击</a></li>
+  <li><a th:href="@{/detail/vip/2}">前任4：英年早婚</a></li>
+</ul>
+</body>
+</html>
