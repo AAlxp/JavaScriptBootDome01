@@ -55,23 +55,31 @@ public class RedisSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+//关闭Spring Security默认开启的CSRF防护功能
+        http.csrf().disable();
+
+
         http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/login/**").permitAll()//对login.html文件进行统一放行
                 .antMatchers("/detail/common/**").hasAnyRole("common", "vip")//放行common用户和vip用户访问
                 .antMatchers("/detail/vip/**").hasAnyRole("vip")//只放行VIP用户访问
                 .anyRequest().authenticated();
+
 
         //自定义用户登录控制
         http.formLogin().loginPage("/userLogin").permitAll()//登录用户的跳转页面
                 .usernameParameter("name").passwordParameter("pwd")//用户名密码
                 .defaultSuccessUrl("/index2")//登录成功后跳转
                 .failureUrl("/loginError");//登录失败后跳转
-         //自定义用户退出控制
+        //自定义用户退出控制
         http.logout().logoutUrl("/mylogout").logoutSuccessUrl("/");
 
+
         //定制Remember-me记住我功能
-        http.rememberMe().rememberMeParameter("rememberme")//指示在登录时记住用户的HTTP参数
-                .tokenValiditySeconds(20)//设置记住我有效期为单位为s这里设置有效期
+        http.rememberMe()//开启记住我功能
+                .rememberMeParameter("rememberme")//指示在登录时记住用户的HTTP参数
+                .tokenValiditySeconds(20)//设置记住我有效期为单位为s这里设置有效期单位为秒
                 .tokenRepository(tokenRepository());//对Cookie信息进行持久化管理
+
     }
 
     //持久化token存储

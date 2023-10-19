@@ -18,15 +18,20 @@ import java.util.stream.Collectors;
  */
 @Service
 public class UserDetailsServicelmpl implements UserDetailsService {
-
     @Autowired
-    private CustomerService customerService;
+    CustomerRepository customerRepository;
+    @Autowired
+    CustomerService customerService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
 //        获取用户信息
         Customer customer = customerService.getCustomer(username);
+//        customer =customerRepository.findById2(username);
+//        System.out.println(customer.getId());
+
+
 //        获取权限
         List<Authority> authorityList = customerService.getCustomerAuthority(username);
 //        信息权限封装
@@ -35,10 +40,11 @@ public class UserDetailsServicelmpl implements UserDetailsService {
                         .getAuthority())).collect(Collectors.toList());
 //       返回的封装的userdatails用户详情类
         if (customer != null) {
-            UserDetails userDetails = new User(customer.getUsername(), customer.getPassword(), simpleGrantedAuthorityList);
+            UserDetails userDetails = new User2(customer.getUsername(), customer.getPassword(),customer.getId(),simpleGrantedAuthorityList);
             return userDetails;
         } else {
             throw new UsernameNotFoundException("用户不存在");
         }
+
     }
 }

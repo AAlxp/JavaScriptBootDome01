@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>用户修改</title>
+</head>
+<body>
+<form th:action="@{/index2}"method="post">
+    <input th:type="submit" th:value="返回" width="20" height="20"/>
+</form>
+<div sec:authorize="isAuthenticated()"><!--  判断用户是否登录  -->
+    <h2 align="center">您的用户名为
+        <span sec:authentication="name" style="color: blue"></span>
+        您的<span sec:authentication="principal" style="color: blue"></span>
+    </h2>
+</div>
+<div align="center">
+    <form th:action="@{/updateUser}" method="post">
+        用户名:<input type="text" name="username"/><br/>
+        密&nbsp;&nbsp;&nbsp;码:<input type="password" name="password"/><br/>
+        <br>
+        <button type="submit">修改</button>
+    </form>
+</div>
+</body>
+</html>
