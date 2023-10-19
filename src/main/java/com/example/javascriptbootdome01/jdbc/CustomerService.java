@@ -13,13 +13,18 @@ import java.util.List;
  */
 @Service
 public class CustomerService {
+
     @Autowired
     private CustomerRepository customerRepository;
+
     @Autowired
     private AuthorityRepository authorityRepository;
+
     @Autowired
     private RedisTemplate redisTemplate;
 
+
+    //    用户名查询用户
     public Customer getCustomer(String username) {
         Customer customer = null;
         Object o = redisTemplate.opsForValue().get("customer_" + username);

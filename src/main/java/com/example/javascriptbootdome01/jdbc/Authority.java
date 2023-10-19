@@ -11,19 +11,12 @@ import java.io.Serializable;
  * @date 2023/10/8 11:03
  * @description:
  */
-@Entity(name = "t_authority")
+@Entity(name = "t_authority")//设置ORM实体类，并指定映射的表名
 public class Authority implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String authority;
-
-    public Authority() {
-    }
-
-    public Authority(String authority) {
-        this.authority = authority;
-    }
+    @Id //表明映射对应的主键id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //设置主键自增策略
+    private Integer id;
+    private String authority;
 
     public Integer getId() {
         return id;
@@ -39,5 +32,13 @@ public class Authority implements Serializable {
 
     public void setAuthority(String authority) {
         this.authority = authority;
+    }
+
+    @Override
+    public String toString() {
+        return "Authority{" +
+                "id=" + id +
+                ", authority='" + authority + '\'' +
+                '}';
     }
 }
