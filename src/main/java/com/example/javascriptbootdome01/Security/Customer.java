@@ -1,17 +1,14 @@
-package com.example.javascriptbootdome01.jdbc;
+package com.example.javascriptbootdome01.Security;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * @author 李晓鹏
- * @date 2023/10/8 11:03
+ * @date 2023/10/13 13:43
  * @description:
  */
-@Entity(name = "t_customer")
+@Entity(name = "t_customer")//设置ORM实体类，并指定映射的表名
 public class Customer implements Serializable {
     @Id //表明映射对应的主键id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  //设置主键自增策略

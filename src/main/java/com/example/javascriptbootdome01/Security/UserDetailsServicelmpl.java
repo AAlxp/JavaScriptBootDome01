@@ -1,4 +1,4 @@
-package com.example.javascriptbootdome01.jdbc;
+package com.example.javascriptbootdome01.Security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,12 +13,11 @@ import java.util.stream.Collectors;
 
 /**
  * @author 李晓鹏
- * @date 2023/10/8 11:03
+ * @date 2023/10/13 13:43
  * @description:
  */
-
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsServicelmpl implements UserDetailsService {
 
     @Autowired
     private CustomerService customerService;

@@ -1,5 +1,7 @@
-package com.example.javascriptbootdome01.jdbc;
+package com.example.javascriptbootdome01.Security;
 
+import com.example.javascriptbootdome01.SQL.jpa.Discuss;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -7,7 +9,7 @@ import java.util.List;
 
 /**
  * @author 李晓鹏
- * @date 2023/10/8 11:03
+ * @date 2023/10/13 13:43
  * @description:
  */
 public interface AuthorityRepository extends JpaRepository<Authority,Integer> {
