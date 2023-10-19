@@ -1,4 +1,4 @@
-//package com.example.javascriptbootdome01.JpaCache;
+package com.example.javascriptbootdome01.JpaCache;//package com.example.javascriptbootdome01.JpaCache;
 //
 //import com.example.javascriptbootdome01.SQL.jpa.Discuss;
 //import com.example.javascriptbootdome01.SQL.jpa.DiscussRepository;

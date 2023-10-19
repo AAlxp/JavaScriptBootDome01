@@ -1,4 +1,4 @@
-package com.example.javascriptbootdome01.base;
+package com.example.javascriptbootdome01.jdbc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

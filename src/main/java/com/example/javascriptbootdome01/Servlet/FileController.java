@@ -1,4 +1,4 @@
-//package com.example.javascriptbootdome01.Servlet;
+package com.example.javascriptbootdome01.Servlet;//package com.example.javascriptbootdome01.Servlet;
 //
 //import org.apache.commons.io.FileUtils;
 //import org.springframework.http.HttpHeaders;

@@ -1,4 +1,4 @@
-//package com.example.javascriptbootdome01.MVC;
+package com.example.javascriptbootdome01.MVC;//package com.example.javascriptbootdome01.MVC;
 //
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.lang.Nullable;

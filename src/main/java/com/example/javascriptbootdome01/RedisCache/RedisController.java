@@ -1,4 +1,4 @@
-//package com.example.javascriptbootdome01.RedisCache;
+package com.example.javascriptbootdome01.RedisCache;//package com.example.javascriptbootdome01.RedisCache;
 //
 //import com.example.javascriptbootdome01.SQL.jpa.Discuss;
 //import org.springframework.beans.factory.annotation.Autowired;
