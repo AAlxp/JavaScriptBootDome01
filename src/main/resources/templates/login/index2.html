@@ -11,9 +11,9 @@
     <h2 align="center">
         您的用户名为
         <span sec:authentication="name" style="color: blue"></span>
-<!--        您的权限为-->
-<!--        <span sec:authentication="principal.authorities" style="color: blue"></span>-->
-<!--        ,你可以看一下电影-->
+        您的权限为
+        <span sec:authentication="principal.authorities" style="color: blue"></span>
+        ,你可以看一下电影
     </h2>
 </div>
 <div>
@@ -25,7 +25,7 @@
     </form>
 </div>
 <hr/>
-<!--<div sec:authorize="hasRole('common')">-->
+<div sec:authorize="hasRole('common')">
     <h3>普通电影</h3>
     <ul>
         <li><a th:href="@{/detail/common/1}">莫斯科行动</a></li>
@@ -33,7 +33,7 @@
     </ul>
 </div>
 
-<!--<div sec:authorize="hasAnyAuthority('ROLE_vip')">-->
+<div sec:authorize="hasAnyAuthority('ROLE_vip')">
     <h3>VIP电影</h3>
     <ul>
         <li><a th:href="@{/detail/vip/1}">志愿军：雄兵出击</a></li>
