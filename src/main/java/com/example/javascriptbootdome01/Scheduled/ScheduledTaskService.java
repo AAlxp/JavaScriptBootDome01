@@ -19,7 +19,7 @@ public class ScheduledTaskService {
     private Integer count2 = 1;
     private Integer count3 = 1;
 
-    // 使用fixedRate属性，每10秒执行一次任务，任务执行完后休眠5秒
+    // 使用fixedRate属性，每10秒执行一次任务，任务执行完后休眠5秒11
     @Async
     @Scheduled(fixedRate = 10000)
     public void scheduledTaskWithFixedRate() throws InterruptedException {
