@@ -7,12 +7,15 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @SpringBootApplication//用注解标识的类作为springboot的入口类
-@EnableCaching
+@EnableScheduling
 @ServletComponentScan//开启基于注解方式的Servlet组件扫描支持
 //@ImportResource("classpath:xmlpropertoes.xml")//加载自定义xml配置文件位置//
+@EnableAsync// 启用异步方法支持
 public class JavaScriptBootDome01Application extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
