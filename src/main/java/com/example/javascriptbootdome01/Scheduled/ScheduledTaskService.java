@@ -20,12 +20,12 @@ public class ScheduledTaskService {
     private Integer count3 = 1;
 
     // 使用fixedRate属性，每10秒执行一次任务，任务执行完后休眠5秒11
-    @Async
-    @Scheduled(fixedRate = 10000)
-    public void scheduledTaskWithFixedRate() throws InterruptedException {
-        System.out.println("fixedRate1执行时间：" + dateFormat.format(new Date()));
-        Thread.sleep(5000); // 代码块休眠5秒
-    }
+//    @Async
+//    @Scheduled(fixedRate = 10000)
+//    public void scheduledTaskWithFixedRate() throws InterruptedException {
+//        System.out.println("fixedRate1执行时间：" + dateFormat.format(new Date()));
+//        Thread.sleep(5000); // 代码块休眠5秒
+//    }
 
 //    // 使用fixedRate属性，每15秒执行一次任务，任务执行完后休眠15秒
 //    @Async
